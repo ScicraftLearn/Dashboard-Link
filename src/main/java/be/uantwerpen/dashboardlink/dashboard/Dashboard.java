@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public class Dashboard {
     private static final String connection = "https://dashboard.minelabs.be/api";
@@ -47,10 +48,8 @@ public class Dashboard {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url)).build();
-            client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
-
-            //TODO return HTTP-RESPONSE
-            return null;
+            CompletableFuture<HttpResponse<String>> future = client.sendAsync(request, HttpResponse.BodyHandlers.ofString());
+            return future.get();
         } catch (Exception e) {
             e.printStackTrace();
         }
