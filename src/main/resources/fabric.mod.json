@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dashboard-link",
+  "version": "${version}",
+  "name": "Dashboard Link",
+  "description": "Dashboard Link mod",
+  "authors": [
+    "pixar02"
+  ],
+  "contact": {
+    "website": "https://dashboard.minelabs.be"
+  },
+  "license": "TODO",
+  "icon": "assets/dashboard-link/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "be.uantwerpen.dashboardlink.DashboardLinkClient"
+    ],
+    "main": [
+      "be.uantwerpen.dashboardlink.DashboardLink"
+    ]
+  },
+  "mixins": [
+    "dashboard-link.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "fabric": "*",
+    "minecraft": "1.19.2",
+    "minelabs": "1.0.0"
+  }
+}
