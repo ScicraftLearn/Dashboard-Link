@@ -1,4 +1,4 @@
-# <img height="50px" src="C:\Users\Pierre\IdeaProjects\Dashboard-Link\src\main\resources\assets\dashboard-link\icon.png" width="50px"/> Dashboard-Link
+# <img height="50px" src="src\main\resources\assets\dashboard-link\icon.png" width="50px"/> Dashboard-Link
 
 _Link Minelabs mod with the online Dashboard_
 
