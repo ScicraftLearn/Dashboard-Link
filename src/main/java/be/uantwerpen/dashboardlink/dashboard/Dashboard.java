@@ -58,8 +58,8 @@ public class Dashboard {
      * @param player_name : String, who do we need to reset
      */
     public static void revokeAdvancements(String player_name) {
-        //TODO CHECK + NEEDS API CALL
-        makeConnection(connection + String.format("/rest_advancements/%s", player_name));
+        //TODO CHECK
+        makeConnection(connection + String.format("/reset_advancements/%s", player_name));
     }
 
     private static HttpResponse<String> makeConnection(String url) {
