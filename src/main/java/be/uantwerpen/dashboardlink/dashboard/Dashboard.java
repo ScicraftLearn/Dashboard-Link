@@ -1,5 +1,7 @@
 package be.uantwerpen.dashboardlink.dashboard;
 
+import be.uantwerpen.dashboardlink.DashboardLink;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -18,7 +20,13 @@ public class Dashboard {
      */
     public static Map<String, Long> fetchMapping() {
         HttpResponse<String> response = makeConnection(connection + "/advancements");
-        // TODO Map HTTP RESPONSE (contains Json mapping, only need ID and minecraft_name)
+        if (response.statusCode() == 200) {
+            // TODO actual Mapping  (contains Json mapping, only need ID and minecraft_name)
+            response.body();
+        } else {
+            DashboardLink.LOGGER.info("Failed to get data, response code: " + response.statusCode());
+        }
+
         return new HashMap<>();
     }
 
@@ -42,6 +50,16 @@ public class Dashboard {
     public static void updateAdvancement(long id, String player_name) {
         //TODO CHECK
         makeConnection(connection + String.format("/advancement/%s/%s", id, player_name));
+    }
+
+    /**
+     * Resets all the player's made advancements
+     *
+     * @param player_name : String, who do we need to reset
+     */
+    public static void revokeAdvancements(String player_name) {
+        //TODO CHECK + NEEDS API CALL
+        makeConnection(connection + String.format("/rest_advancements/%s", player_name));
     }
 
     private static HttpResponse<String> makeConnection(String url) {
