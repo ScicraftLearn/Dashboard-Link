@@ -62,6 +62,12 @@ public class Dashboard {
         makeConnection(connection + String.format("/reset_advancements/%s", player_name));
     }
 
+    /**
+     * Make the actual Dashboard connection
+     *
+     * @param url : API end-point url
+     * @return Response from the Dashboard
+     */
     private static HttpResponse<String> makeConnection(String url) {
         try {
             HttpClient client = HttpClient.newHttpClient();

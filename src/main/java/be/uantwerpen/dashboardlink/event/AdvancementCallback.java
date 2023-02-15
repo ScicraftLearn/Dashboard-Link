@@ -13,5 +13,11 @@ public interface AdvancementCallback {
                 }
             });
 
+    /**
+     * Method that actually happens when a player completes an Advancement
+     *
+     * @param player      : who completed the Advancement
+     * @param advancement : the actual Advancement
+     */
     void completeAdvancement(PlayerEntity player, Advancement advancement);
 }
