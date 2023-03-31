@@ -3,7 +3,7 @@ package be.uantwerpen.dashboardlink.dashboard;
 import java.util.Map;
 
 public class Advancements {
-    private final Map<String, Long> mapping;
+    private final Map<Long, String> mapping;
 
     public Advancements() {
         this.mapping = Dashboard.fetchMapping();
@@ -16,9 +16,9 @@ public class Advancements {
      * @return Long, the ID
      */
     public Long getAdvancementID(String name) {
-        for (Map.Entry<String, Long> pair : mapping.entrySet()) {
-            if (pair.getKey().equals(name)) {
-                return pair.getValue();
+        for (Map.Entry<Long, String> pair : mapping.entrySet()) {
+            if (pair.getValue().equals(name)) {
+                return pair.getKey();
             }
         }
         return null;

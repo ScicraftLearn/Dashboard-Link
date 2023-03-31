@@ -1,6 +1,10 @@
 package be.uantwerpen.dashboardlink.dashboard;
 
 import be.uantwerpen.dashboardlink.DashboardLink;
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
+import com.mojang.authlib.minecraft.client.ObjectMapper;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -18,11 +22,10 @@ public class Dashboard {
      *
      * @return Map<String, Long> "minecraft_name <-> ID"
      */
-    public static Map<String, Long> fetchMapping() {
+    public static Map<Long, String> fetchMapping() {
         HttpResponse<String> response = makeConnection(connection + "/advancements");
         if (response.statusCode() == 200) {
-            // TODO actual Mapping  (contains Json mapping, only need ID and minecraft_name)
-            response.body();
+            return new Gson().fromJson(response.body(), new TypeToken<Map<Long, String>>() {}.getType());
         } else {
             DashboardLink.LOGGER.info("Failed to get data, response code: " + response.statusCode());
         }
@@ -37,18 +40,21 @@ public class Dashboard {
      * @param type        : true = online, false = offline
      */
     public static void playerConnection(String player_name, boolean type) {
-        //TODO CHECK
+        if (player_name == null)
+            return;
         makeConnection(connection + String.format("/isonline/%s/%s", player_name, type));
     }
 
     /**
-     * Update the Advancement with given ID for the given player_name
+     * Update the Advancement with given ID for the given player_name <p>
+     * Will only update if id is NOT NULL
      *
      * @param id          : unique ID for advancement
      * @param player_name : String, who completed the advancement
      */
-    public static void updateAdvancement(long id, String player_name) {
-        //TODO CHECK
+    public static void updateAdvancement(Long id, String player_name) {
+        if (id == null)
+            return;
         makeConnection(connection + String.format("/advancement/%s/%s", id, player_name));
     }
 
@@ -58,7 +64,9 @@ public class Dashboard {
      * @param player_name : String, who do we need to reset
      */
     public static void revokeAdvancements(String player_name) {
-        //TODO CHECK
+        if (player_name == null)
+            return;
+        //TODO CHECK / FINISH
         makeConnection(connection + String.format("/reset_advancements/%s", player_name));
     }
 
