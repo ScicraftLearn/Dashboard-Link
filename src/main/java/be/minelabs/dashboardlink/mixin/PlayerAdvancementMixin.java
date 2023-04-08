@@ -1,6 +1,6 @@
-package be.uantwerpen.dashboardlink.mixin;
+package be.minelabs.dashboardlink.mixin;
 
-import be.uantwerpen.dashboardlink.event.AdvancementCallback;
+import be.minelabs.dashboardlink.event.AdvancementCallback;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.PlayerAdvancementTracker;
 import net.minecraft.server.network.ServerPlayerEntity;

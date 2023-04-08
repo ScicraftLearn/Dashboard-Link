@@ -1,4 +1,4 @@
-package be.uantwerpen.dashboardlink.dashboard;
+package be.minelabs.dashboardlink.dashboard;
 
 import java.util.Map;
 

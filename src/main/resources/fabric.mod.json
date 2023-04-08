@@ -15,10 +15,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "be.uantwerpen.dashboardlink.DashboardLinkClient"
+      "be.minelabs.dashboardlink.DashboardLinkClient"
     ],
     "main": [
-      "be.uantwerpen.dashboardlink.DashboardLink"
+      "be.minelabs.dashboardlink.DashboardLink"
     ]
   },
   "mixins": [

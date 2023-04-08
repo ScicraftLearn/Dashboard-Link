@@ -1,17 +1,11 @@
-package be.uantwerpen.dashboardlink.event;
+package be.minelabs.dashboardlink.event;
 
-import be.uantwerpen.dashboardlink.Commands;
-import be.uantwerpen.dashboardlink.DashboardLink;
-import be.uantwerpen.dashboardlink.dashboard.Dashboard;
+import be.minelabs.dashboardlink.Commands;
+import be.minelabs.dashboardlink.DashboardLink;
+import be.minelabs.dashboardlink.dashboard.Dashboard;
 import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
-
-import java.util.Collection;
 
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;

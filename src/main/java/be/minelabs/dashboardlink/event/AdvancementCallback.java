@@ -1,4 +1,4 @@
-package be.uantwerpen.dashboardlink.event;
+package be.minelabs.dashboardlink.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

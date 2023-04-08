@@ -1,6 +1,6 @@
-package be.uantwerpen.dashboardlink.event;
+package be.minelabs.dashboardlink.event;
 
-import be.uantwerpen.dashboardlink.dashboard.Dashboard;
+import be.minelabs.dashboardlink.dashboard.Dashboard;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 
 public class ClientModEvents {

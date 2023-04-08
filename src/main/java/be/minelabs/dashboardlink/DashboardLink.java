@@ -1,7 +1,7 @@
-package be.uantwerpen.dashboardlink;
+package be.minelabs.dashboardlink;
 
-import be.uantwerpen.dashboardlink.dashboard.Advancements;
-import be.uantwerpen.dashboardlink.event.ServerModEvents;
+import be.minelabs.dashboardlink.dashboard.Advancements;
+import be.minelabs.dashboardlink.event.ServerModEvents;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

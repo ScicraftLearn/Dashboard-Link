@@ -1,8 +1,7 @@
-package be.uantwerpen.dashboardlink;
+package be.minelabs.dashboardlink;
 
-import be.uantwerpen.dashboardlink.dashboard.Advancements;
-import be.uantwerpen.dashboardlink.dashboard.Dashboard;
-import net.minecraft.command.argument.EntityArgumentType;
+import be.minelabs.dashboardlink.dashboard.Advancements;
+import be.minelabs.dashboardlink.dashboard.Dashboard;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.ServerCommandSource;

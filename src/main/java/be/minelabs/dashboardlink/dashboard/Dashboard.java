@@ -1,10 +1,8 @@
-package be.uantwerpen.dashboardlink.dashboard;
+package be.minelabs.dashboardlink.dashboard;
 
-import be.uantwerpen.dashboardlink.DashboardLink;
+import be.minelabs.dashboardlink.DashboardLink;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.TypeAdapter;
-import com.mojang.authlib.minecraft.client.ObjectMapper;
 
 import java.net.URI;
 import java.net.http.HttpClient;
