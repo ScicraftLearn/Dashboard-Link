@@ -11,7 +11,7 @@ Dashboard-Link needs Minelabs, it will not work without it!
 
 - [Minelabs](https://github.com/ScicraftLearn/MineLabs/releases/tag/releases), version: 1.0.0 or higher.
 - [Dashboard-Link]().
-- [Fabric-API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), version: 0.62.0 or higher for Minecraft 1.19.2
+- [Fabric-API](https://www.curseforge.com/minecraft/mc-mods/fabric-api), version: 0.80.0 or higher for Minecraft 1.19.4
 - Minecraft Java Edition (with a Fabric Loader installed)
 
 ## Installation
