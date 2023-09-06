@@ -16,13 +16,10 @@ public class ServerModEvents {
         AdvancementCallback.EVENT.register((player, advancement) -> {
             if (advancement.getId().getNamespace().equals(DashboardLink.MINELABS_ID)) {
                 //Only trigger on our own ADVANCEMENTS
-                DashboardLink.LOGGER.info("This was a Minelabs Advancement: " + advancement.getId());
                 String adv_name = advancement.getId().getPath();
                 if (advancement.getId().getPath().contains("/")) {
-                    //TODO REMOVE FOLDER STRUCTURE
-                    // "basic/decay" -> "decay"
-                    adv_name = adv_name.split("/")[1]; // ONLY works with a single folder as depth
-                    // ...
+                    String[] split = adv_name.split("/");
+                    adv_name = split[split.length-1];
                 }
                 Dashboard.updateAdvancement(DashboardLink.advancements.getAdvancementID(adv_name), player.getEntityName());
             }
