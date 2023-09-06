@@ -11,24 +11,24 @@ import java.util.Collection;
 
 public class Commands {
 
-    public static void resetCommand(ServerCommandSource source, Collection<? extends Entity> targets){
-        for (Entity entity: targets) {
+    public static void resetCommand(ServerCommandSource source, Collection<? extends Entity> targets) {
+        for (Entity entity : targets) {
             PlayerEntity player = (PlayerEntity) entity;
             Dashboard.revokeAdvancements(player.getName().getString());
         }
 
         if (targets.size() == 1) {
-            source.sendFeedback(
+            source.sendFeedback(() ->
                     Text.literal("Reseting progress for " + targets.iterator().next().getDisplayName().getString()), true);
         } else {
-            source.sendFeedback(
+            source.sendFeedback(() ->
                     Text.literal("Reseting progress for " + targets.size() + " players"), true);
 
         }
     }
 
-    public static void reloadCommand(ServerCommandSource source){
-        source.sendFeedback(Text.literal("Reloading Mapping"), true);
+    public static void reloadCommand(ServerCommandSource source) {
+        source.sendFeedback(() -> Text.literal("Reloading Mapping"), true);
         DashboardLink.advancements = new Advancements();
     }
 }

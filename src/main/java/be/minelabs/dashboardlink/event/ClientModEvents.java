@@ -13,7 +13,6 @@ public class ClientModEvents {
 
         ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
             assert client.player != null;
-
             Dashboard.playerConnection(client.player.getName().getString(), false);
         });
     }
